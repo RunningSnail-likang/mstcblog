@@ -1,5 +1,5 @@
 /**
- * Created by lk on 2018/4/30.
+ * Created by lk on 2018/5/3.
  */
 
 var constcode="";//验证码全局变量
