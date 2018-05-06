@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lk on 2018/5/3.
  */
 @RestController
+@RequestMapping(value="/collection")
 public class CollectionController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -40,7 +41,7 @@ public class CollectionController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/collection/add",method = RequestMethod.POST,
+    @RequestMapping(value="/add",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo addCollection(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
@@ -54,7 +55,7 @@ public class CollectionController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/collection/cancel",method = RequestMethod.POST,
+    @RequestMapping(value="/cancel",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo cancelCollection(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lk on 2018/5/3.
  */
 @RestController
+@RequestMapping(value="/message")
 public class MessageController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -40,7 +41,7 @@ public class MessageController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/message/getsystem",method = RequestMethod.POST,
+    @RequestMapping(value="/getsystem",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo getSystemMessage(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
@@ -54,7 +55,7 @@ public class MessageController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/message/getuser",method = RequestMethod.POST,
+    @RequestMapping(value="/getuser",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo getUserActivity(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;

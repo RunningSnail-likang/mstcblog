@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lk on 2018/5/3.
  */
 @RestController
+@RequestMapping(value="/blog")
 public class BlogController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -40,7 +41,7 @@ public class BlogController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/blog/public",method = RequestMethod.POST,
+    @RequestMapping(value="/public",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo publicBlog(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
@@ -54,7 +55,7 @@ public class BlogController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/blog/comment",method = RequestMethod.POST,
+    @RequestMapping(value="/comment",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo commentBlog(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lk on 2018/5/3.
  */
 @RestController
+@RequestMapping(value="/activity")
 public class ActivityController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -40,7 +41,7 @@ public class ActivityController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/activity/public",method = RequestMethod.POST,
+    @RequestMapping(value="/public",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo publicActivity(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
@@ -54,7 +55,7 @@ public class ActivityController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/activity/comment",method = RequestMethod.POST,
+    @RequestMapping(value="/comment",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo commentActivity(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;

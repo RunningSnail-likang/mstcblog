@@ -25,6 +25,7 @@ import java.util.UUID;
  */
 
 @RestController
+@RequestMapping(value="/user")
 public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -44,7 +45,7 @@ public class UserController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value="/user/check",method = RequestMethod.POST,
+    @RequestMapping(value="/check",method = RequestMethod.POST,
             produces= MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResultInfo checkData(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
@@ -62,7 +63,7 @@ public class UserController {
 
 
     //邮箱注册
-    @RequestMapping(value="/user/registeremail",method = RequestMethod.POST)
+    @RequestMapping(value="/registeremail",method = RequestMethod.POST)
     public ResultInfo register(@RequestBody JSONObject jsonObject,HttpServletResponse response){
         String email=jsonObject.getString("email");
         String password=jsonObject.getString("password");
@@ -83,7 +84,7 @@ public class UserController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping(value = "/user/captcha",method = RequestMethod.POST)
+    @RequestMapping(value = "/captcha",method = RequestMethod.POST)
     public ResultInfo sendCaptcha(@RequestBody JSONObject jsonObject){
         ResultInfo result=null;
         String code=jsonObject.getString("code");
@@ -99,7 +100,7 @@ public class UserController {
     }
 
     //登录
-    @RequestMapping(value="/user/login",method = RequestMethod.POST)
+    @RequestMapping(value="/login",method = RequestMethod.POST)
     public ResultInfo login(@RequestBody JSONObject jsonObject,HttpServletResponse response){
         ResultInfo result=null;
         String password=jsonObject.getString("password");
